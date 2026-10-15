@@ -14,7 +14,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;700&display=swap"
         rel="stylesheet">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="48x48" href="/Image/Logo Marca.jpeg">
+    <link rel="apple-touch-icon" href="/Image/Logo Marca.jpeg">
 
 <body>
 
@@ -44,7 +49,7 @@
     </header>
 
 
-  
+
     <section class="hero" id="inicio">
         <div class="hero-content">
 
@@ -221,7 +226,7 @@
                 <span class="badge-crc">CRC ATIVO</span>
 
                 <div class="badge-person">
-                    <strong>Lorraynne</strong>
+                    <strong>Lorraynne Garcia</strong>
                     <span>Contadora responsável</span>
                 </div>
             </div>
@@ -229,7 +234,7 @@
             <div class="about-content">
                 <span class="about-label">Sobre a contadora</span>
                 <h2 class="about-title">
-                    Experiência, proximidade e,<br>
+                    Experiência, proximidade e,<br>p
                     atenção aos detalhes
                 </h2>
                 <p class="about-text">
@@ -304,14 +309,13 @@
 
             <div class="formulario">
 
-                <form id="form-contato" action="https://formsubmit.co/ajax/garrezcontabilidade@gmail.com"
-                    method="POST">
+                <form id="form-contato" action="https://formsubmit.co/ajax/garrezcontabilidade@gmail.com" method="POST">
 
-                  
+
                     <input type="hidden" name="_subject" value="Novo contato pelo site - Garrez Contabilidade">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="false">
-                  
+
                     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
                     <div class="campo">
@@ -367,7 +371,7 @@
 
     <script src="JavaScript/app.js"></script>
 
-   
+
     <script>
         (function () {
             const formulario = document.getElementById("form-contato");
@@ -407,8 +411,8 @@
 
     <script>
         (function () {
-            const ALTURA_MENU = 70;   
-            const DURACAO = 900;      
+            const ALTURA_MENU = 70;
+            const DURACAO = 900;
 
             const reduzirMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -431,7 +435,7 @@
                     const progresso = Math.min((agora - comeco) / DURACAO, 1);
                     window.scrollTo({
                         top: inicio + (fim - inicio) * suavizar(progresso),
-                        behavior: "instant"  
+                        behavior: "instant"
                     });
                     if (progresso < 1) requestAnimationFrame(passo);
                 }

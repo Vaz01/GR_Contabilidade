@@ -1,4 +1,19 @@
 
+:root {
+    --navy: #16143B;
+    --navy-dark: #0F0E2B;
+    --navy-light: #1B1A4A;
+    --purple: #2A1F5C;
+    --purple-dark: #231B4D;
+    --gold: #C9A55A;
+    --gold-light: #D8B86E;
+    --cream: #F7F3EA;
+    --white: #FFFFFF;
+    --text-dark: #16143B;
+    --text-body: #3A3856;
+    --text-on-dark: #E8E6F0;
+}
+
 *,
 *::before,
 *::after {
@@ -9,19 +24,11 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; 
+    scroll-padding-top: 80px;
 }
 
 body {
-    min-height: 100vh;
     font-family: "Inter", sans-serif;
-    color: #e5e7eb;
-    background: linear-gradient(to right,
-            #302150 15%,
-            #351a2b 50%,
-            #381b2e 65%,
-            #331929 75%,
-            #2e1625 100%);
 }
 
 li {
@@ -34,19 +41,20 @@ a {
 }
 
 
-
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
-    background-color: #16143b;
+    background-color: var(--navy);
+    border-bottom: 1px solid rgba(201, 165, 90, 0.25);
 }
 
 header.cabecalho {
     position: static;
     z-index: auto;
     background: transparent;
+    border-bottom: none;
 }
 
 .navbar {
@@ -68,7 +76,7 @@ header.cabecalho {
 }
 
 .nav-link:hover {
-    color: #C9A55A;
+    color: var(--gold);
 }
 
 .hamburguer {
@@ -89,8 +97,8 @@ header.cabecalho {
 .btn-agendar {
     display: inline-block;
     padding: 10px 22px;
-    background-color: #C9A55A;
-    color: #fff;
+    background-color: var(--gold);
+    color: var(--navy);
     font-weight: 600;
     font-size: 0.95rem;
     border-radius: 999px;
@@ -98,7 +106,7 @@ header.cabecalho {
 }
 
 .btn-agendar:hover {
-    background-color: transparent;
+    background-color: var(--gold-light);
     transform: translateY(-2px);
 }
 
@@ -113,15 +121,16 @@ header.cabecalho {
 }
 
 .btn-link:hover {
-    color: #C9A55A;
+    color: var(--gold);
 }
-
 
 
 .hero {
     position: relative;
     overflow: hidden;
     padding: 80px 48px 100px;
+    background: linear-gradient(135deg, #16143B 0%, #231B4D 55%, #2A1F5C 100%);
+    border-bottom: 1px solid rgba(201, 165, 90, 0.4);
 }
 
 .hero-content {
@@ -139,25 +148,25 @@ header.cabecalho {
 }
 
 .hero-title {
-    font-family: "JetBrains Mono", monospace;
-    font-weight: 400;
-    font-size: clamp(2.1rem, 3.6vw, 3.4rem);   
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: clamp(2.1rem, 3.6vw, 3.4rem);
     line-height: 1.2;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.01em;
     color: #fff;
     margin: 0 0 32px;
 }
 
 .hero-text {
-    font-size: 1.2rem;                       
+    font-size: 1.2rem;
     line-height: 1.65;
-    color: #e5e7eb;
+    color: var(--text-on-dark);
     max-width: 580px;
     margin: 0 0 18px;
 }
 
 .hero-text--secondary {
-    font-size: 1.08rem;                         
+    font-size: 1.08rem;
     opacity: 0.85;
 }
 
@@ -175,9 +184,9 @@ header.cabecalho {
 }
 
 .hero-note {
-    font-size: 0.95rem;                         
+    font-size: 0.95rem;
     line-height: 1.5;
-    color: #e5e7eb;
+    color: var(--text-on-dark);
     opacity: 0.7;
     max-width: 580px;
     margin: 22px 0 0;
@@ -221,7 +230,7 @@ header.cabecalho {
 
 @media (max-width: 768px) {
     .hero {
-        padding: 50px 20px 110px;  
+        padding: 50px 20px 110px;
     }
 
     .hero-content {
@@ -235,7 +244,7 @@ header.cabecalho {
     }
 
     .hero-title br {
-        display: none;            
+        display: none;
     }
 
     .hero-text,
@@ -265,9 +274,9 @@ header.cabecalho {
 
 
 .servicos {
-    background-color: #f7f4ee;
+    background-color: var(--cream);
     padding: 100px 24px;
-    color: #1a1a1a;
+    color: var(--text-dark);
     text-align: center;
 }
 
@@ -277,7 +286,7 @@ header.cabecalho {
 }
 
 .servicos-label {
-    color: #C9A55A;
+    color: var(--gold);
     font-weight: 600;
     letter-spacing: 3px;
     font-size: 0.8rem;
@@ -285,17 +294,18 @@ header.cabecalho {
 }
 
 .servicos-title {
+    font-family: "Playfair Display", serif;
     font-size: clamp(1.7rem, 3vw, 2.3rem);
     font-weight: 600;
     margin: 14px 0 18px;
-    color: #16143b;
+    color: var(--navy);
     letter-spacing: -0.01em;
 }
 
 .servicos-subtitle {
     font-size: 0.98rem;
     line-height: 1.7;
-    color: #5a5a5a;
+    color: var(--text-body);
     max-width: 540px;
     margin: 0 auto 60px;
 }
@@ -312,7 +322,7 @@ header.cabecalho {
     padding: 36px 30px 30px;
     background-color: #fff;
     border-radius: 14px;
-    border-top: 3px solid #C9A55A;
+    border-top: 3px solid var(--gold);
     box-shadow: 0 2px 10px rgba(22, 20, 59, 0.06);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -324,23 +334,23 @@ header.cabecalho {
 
 .servico-numero {
     display: inline-block;
-    font-family: "JetBrains Mono", monospace;
-    font-size: 0.85rem;
-    color: #C9A55A;
+    font-family: "Playfair Display", serif;
+    font-size: 0.95rem;
+    color: var(--gold);
     margin-bottom: 14px;
 }
 
 .servico-item h3 {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #16143b;
+    color: var(--navy);
     margin-bottom: 10px;
 }
 
 .servico-item p {
     font-size: 0.92rem;
     line-height: 1.65;
-    color: #5a5a5a;
+    color: var(--text-body);
 }
 
 @media (max-width: 1024px) {
@@ -361,7 +371,7 @@ header.cabecalho {
 
 
 .como-funciona {
-    background: #2d1624;
+    background: var(--purple-dark);
     padding: 80px 24px;
     color: #fff;
 }
@@ -374,7 +384,7 @@ header.cabecalho {
 
 .cf-label {
     display: block;
-    color: #c9a55a;
+    color: var(--gold);
     font-weight: 600;
     font-size: 14px;
     letter-spacing: 0.5px;
@@ -382,9 +392,9 @@ header.cabecalho {
 }
 
 .cf-title {
-    font-family: "JetBrains Mono", "Courier New", monospace;
+    font-family: "Playfair Display", serif;
     font-size: clamp(24px, 3vw, 34px);
-    font-weight: 700;
+    font-weight: 600;
     margin: 0 0 16px;
 }
 
@@ -410,7 +420,7 @@ header.cabecalho {
     left: 12.5%;
     right: 12.5%;
     height: 1px;
-    background: rgba(255, 255, 255, 0.45);
+    background: rgba(201, 165, 90, 0.5);
 }
 
 .cf-step {
@@ -425,9 +435,9 @@ header.cabecalho {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: #c9a55a;
-    color: #fff;
-    font-family: "JetBrains Mono", monospace;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: "Playfair Display", serif;
     font-weight: 700;
     font-size: 24px;
     display: flex;
@@ -440,7 +450,7 @@ header.cabecalho {
     width: 100%;
     flex: 1;
     background: #fff;
-    color: #111;
+    color: var(--text-dark);
     border-radius: 16px;
     padding: 20px 24px 28px;
     text-align: left;
@@ -452,7 +462,7 @@ header.cabecalho {
     height: 24px;
     margin-bottom: 8px;
     fill: none;
-    stroke: #c9a55a;
+    stroke: var(--gold);
     stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -467,7 +477,7 @@ header.cabecalho {
 .cf-card p {
     font-size: 16px;
     line-height: 1.5;
-    color: #222;
+    color: var(--text-body);
     margin: 0;
 }
 
@@ -489,15 +499,14 @@ header.cabecalho {
 }
 
 
-
 .about {
     width: 100%;
     min-height: 600px;
     display: flex;
     align-items: center;
     padding: 80px 60px;
-    background: #fff;
-    color: #1a1a1a;
+    background: var(--white);
+    color: var(--text-dark);
 }
 
 .about-container {
@@ -513,7 +522,7 @@ header.cabecalho {
 .about-image {
     position: relative;
     width: 420px;
-    height: 520px;             
+    height: 520px;
 }
 
 .about-image img {
@@ -530,7 +539,7 @@ header.cabecalho {
     right: 14px;
     padding: 7px 12px;
     background: #fff;
-    color: #222;
+    color: var(--navy);
     border-radius: 7px;
     font-size: 11px;
     font-weight: 700;
@@ -552,7 +561,7 @@ header.cabecalho {
 }
 
 .badge-person strong {
-    color: #111;
+    color: var(--navy);
     font-size: 13px;
     font-weight: 700;
     line-height: 1.2;
@@ -560,8 +569,9 @@ header.cabecalho {
 
 .badge-person span {
     margin-top: 3px;
-    color: #777;
-    font-size: 8px;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 600;
     white-space: nowrap;
 }
 
@@ -573,37 +583,37 @@ header.cabecalho {
 .about-eyebrow {
     display: block;
     margin-bottom: 30px;
-    color: #444;
+    color: var(--gold);
     font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.6px;
+    letter-spacing: 3px;
 }
 
 .about-title {
     margin: 0 0 22px;
-    font-family: "JetBrains Mono", monospace;
+    font-family: "Playfair Display", serif;
     font-size: 34px;
-    font-weight: 700;
-    line-height: 1.08;
-    color: #111;
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--navy);
 }
 
 .about-text {
     max-width: 620px;
     margin: 0 0 27px;
     font-size: 16px;
-    line-height: 1.45;
-    color: #555;
+    line-height: 1.6;
+    color: var(--text-body);
 }
 
 .about-list li {
     position: relative;
     margin-bottom: 15px;
-    padding-left: 21px;
+    padding-left: 24px;
     font-size: 14px;
-    line-height: 1.4;
-    color: #707070;
+    line-height: 1.5;
+    color: var(--text-body);
 }
 
 .about-list li::before {
@@ -611,7 +621,7 @@ header.cabecalho {
     position: absolute;
     left: 0;
     top: 0;
-    color: #3baa48;
+    color: var(--gold);
     font-size: 16px;
     font-weight: 700;
 }
@@ -628,7 +638,7 @@ header.cabecalho {
 
     .about-image {
         width: 350px;
-        height: 450px;        
+        height: 550px;
     }
 
     .about-title {
@@ -654,7 +664,7 @@ header.cabecalho {
     .about-image {
         width: 100%;
         max-width: 420px;
-        height: 460px;         
+        height: 520px;
         margin: 0 auto;
     }
 
@@ -669,7 +679,7 @@ header.cabecalho {
     }
 
     .about-image {
-        height: 380px;         
+        height: 380px;
     }
 
     .about-title {
@@ -681,15 +691,12 @@ header.cabecalho {
     }
 }
 
-
 .contato {
     position: relative;
     width: 100%;
     min-height: 100vh;
     padding: 90px 50px 100px;
-    background:
-        radial-gradient(circle at 10% 90%, rgba(52, 36, 92, 0.08), transparent 35%),
-        #f5f6fa;
+    background: var(--cream);
 }
 
 .cabecalho {
@@ -702,7 +709,7 @@ header.cabecalho {
 .cabecalho span {
     display: inline-block;
     margin-bottom: 12px;
-    color: #d99500;
+    color: var(--gold);
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -716,16 +723,17 @@ header.cabecalho {
     height: 3px;
     margin: 8px auto 0;
     border-radius: 10px;
-    background: #d99500;
+    background: var(--gold);
 }
 
 .cabecalho h1 {
     margin: 0;
-    color: #15133a;
+    font-family: "Playfair Display", serif;
+    color: var(--navy);
     font-size: clamp(30px, 3.2vw, 40px);
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.2;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
 }
 
 .contato-subtitle {
@@ -733,7 +741,7 @@ header.cabecalho {
     margin: 16px auto 0;
     font-size: 1rem;
     line-height: 1.6;
-    color: #111;
+    color: var(--text-body);
     text-align: center;
 }
 
@@ -784,13 +792,14 @@ header.cabecalho {
     padding: 27px 30px;
     background: #fff;
     border: 1px solid #e7e7ec;
+    border-top: 3px solid var(--gold);
     border-radius: 16px;
     box-shadow: 0 12px 30px rgba(21, 19, 58, 0.07);
 }
 
 .informacoes h2 {
     margin-bottom: 20px;
-    color: #15133a;
+    color: var(--navy);
     font-size: 17px;
     font-weight: 600;
     letter-spacing: 0.2px;
@@ -803,7 +812,7 @@ header.cabecalho {
     height: 2px;
     margin-top: 9px;
     border-radius: 10px;
-    background: #d99500;
+    background: var(--gold);
 }
 
 .linha {
@@ -831,11 +840,13 @@ header.cabecalho {
 }
 
 
+
 .formulario {
     width: 100%;
     padding: 38px 40px 35px;
     background: #fff;
     border: 1px solid #e6e6eb;
+    border-top: 3px solid var(--gold);
     border-radius: 20px;
     box-shadow: 0 20px 50px rgba(21, 19, 58, 0.1);
 }
@@ -893,9 +904,9 @@ header.cabecalho {
 
 .campo input:focus,
 .campo textarea:focus {
-    border-color: #d99500;
+    border-color: var(--gold);
     background: #fff;
-    box-shadow: 0 0 0 3px rgba(217, 149, 0, 0.1);
+    box-shadow: 0 0 0 3px rgba(201, 165, 90, 0.18);
 }
 
 .formulario button {
@@ -909,14 +920,14 @@ header.cabecalho {
     margin-top: 6px;
     border: none;
     border-radius: 8px;
-    background: #d99500;
-    color: #fff;
+    background: var(--gold);
+    color: var(--navy);
     font-family: inherit;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.2px;
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(217, 149, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(201, 165, 90, 0.25);
     transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -928,9 +939,9 @@ header.cabecalho {
 }
 
 .formulario button:hover {
-    background: #bd8100;
+    background: var(--gold-light);
     transform: translateY(-2px);
-    box-shadow: 0 12px 25px rgba(217, 149, 0, 0.28);
+    box-shadow: 0 12px 25px rgba(201, 165, 90, 0.35);
 }
 
 .formulario button:hover::after {
@@ -1039,7 +1050,7 @@ header.cabecalho {
     }
 
     .formulario form {
-        grid-template-columns: 1fr;  
+        grid-template-columns: 1fr;
     }
 
     .campo label {
@@ -1103,6 +1114,7 @@ header.cabecalho {
     }
 }
 
+
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
@@ -1123,7 +1135,6 @@ header.cabecalho {
     transform: scale(1.1);
 }
 
-
 @media (max-width: 768px) {
     .hamburguer {
         display: block;
@@ -1137,7 +1148,7 @@ header.cabecalho {
         gap: 0;
         width: 100%;
         text-align: center;
-        background-color: #16143b;
+        background-color: var(--navy);
         transition: 0.3s;
     }
 
