@@ -8,21 +8,20 @@
     <meta name="description"
         content="Contabilidade em Canarana - MT com atendimento humano e personalizado para empresas, MEIs e pessoas físicas. Abertura de empresas, departamento pessoal, imposto de renda e mais.">
 
+    <meta name="color-scheme" content="only light">
+    <meta name="supported-color-schemes" content="light">
+
     <link rel="stylesheet" href="css/Style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;700&display=swap"
-        rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="48x48" href="/Image/Logo Marca.jpeg">
-    <link rel="apple-touch-icon" href="/Image/Logo Marca.jpeg">
 
-    <meta name="color-scheme" content="only light">
-    <meta name="supported-color-schemes" content="light">
+    <link rel="icon" type="image/jpeg" href="Image/Logo%20Marca.jpeg">
+    <link rel="apple-touch-icon" href="Image/Logo%20Marca.jpeg">
+</head>
 
 <body>
 
@@ -50,7 +49,6 @@
             </div>
         </nav>
     </header>
-
 
 
     <section class="hero" id="inicio">
@@ -149,7 +147,6 @@
     </section>
 
 
-
     <section class="como-funciona" id="como-funciona">
         <div class="cf-container">
             <span class="cf-label">COMO FUNCIONA</span>
@@ -237,7 +234,7 @@
             <div class="about-content">
                 <span class="about-label">Sobre a contadora</span>
                 <h2 class="about-title">
-                    Experiência, proximidade e,<br>p
+                    Experiência, proximidade e<br>
                     atenção aos detalhes
                 </h2>
                 <p class="about-text">
@@ -289,7 +286,7 @@
 
                     <div class="linha">
                         <span>Endereço</span>
-                        <p>R. Juí, 94 - Centro, Canarana - MT, 78640-000</p>
+                        <p>R. Ijuí, 94 - Centro, Canarana - MT, 78640-000</p>
                     </div>
 
                     <div class="linha">
@@ -312,8 +309,8 @@
 
             <div class="formulario">
 
-                <form id="form-contato" action="https://formsubmit.co/ajax/garrezcontabilidade@gmail.com" method="POST">
-
+                <form id="form-contato" action="https://formsubmit.co/ajax/garrezcontabilidade@gmail.com"
+                    method="POST">
 
                     <input type="hidden" name="_subject" value="Novo contato pelo site - Garrez Contabilidade">
                     <input type="hidden" name="_template" value="table">
@@ -323,17 +320,17 @@
 
                     <div class="campo">
                         <label for="nome">Nome Completo</label>
-                        <input type="text" id="nome" name="Nome" placeholder="Como podemos te chamar ?" required>
+                        <input type="text" id="nome" name="Nome" placeholder="Como podemos te chamar?" required>
                     </div>
 
                     <div class="campo">
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" placeholder="seu@gmail.com" required>
+                        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
                     </div>
 
                     <div class="campo campo-menor">
                         <label for="whatsapp">WhatsApp</label>
-                        <input type="tel" id="whatsapp" name="WhatsApp" placeholder="(66) 98340-0932" required>
+                        <input type="tel" id="whatsapp" name="WhatsApp" placeholder="(62) 99999-9999" required>
                     </div>
 
                     <div class="campo campo-menor">
@@ -396,7 +393,11 @@
                         body: new FormData(formulario)
                     });
 
-                    if (!resposta.ok) throw new Error("Falha no envio");
+                    const dados = await resposta.json();
+
+                    if (!resposta.ok || dados.success === "false" || dados.success === false) {
+                        throw new Error("Falha no envio");
+                    }
 
                     formulario.reset();
                     mensagemStatus.classList.add("sucesso");
@@ -410,7 +411,6 @@
             });
         })();
     </script>
-
 
     <script>
         (function () {
